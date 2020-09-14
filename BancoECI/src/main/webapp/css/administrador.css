@@ -1,0 +1,97 @@
+body {
+    background-image: url("../img/fondo.jpg");
+    margin:0;
+    padding: 0;
+    background-size:cover;
+    text-align: center;
+    font-family: Quicksand;
+}
+
+h1{
+    color: black ;
+}
+
+#buscar{
+    margin-top: 4px;
+    width: 8%;
+    font-family: Quicksand;
+    background-color: mintcream;
+    border-radius: 15px;
+}
+
+#busqueda{
+    border-radius: 15px;
+    height: 15px;
+}
+
+
+h1{
+    font-family: Quicksand;
+}
+
+
+#boton_register{
+    margin-top: 4px;
+    width: 20%;
+    font-family: Quicksand;
+    background-color: mintcream;
+    border-radius: 15px;
+}
+
+#boton_guardar{
+    width: 10%;
+    font-family: Quicksand;
+    background-color: mintcream;
+    border-radius: 15px;
+
+}
+#boton_salir{
+    width: 5%;
+    font-family: Quicksand;
+    background-color: mintcream;
+    border-radius: 15px;
+    margin: 1px 1px;
+    float: right;
+
+}
+
+#registrarUsuario{
+    margin-left: 30%;
+    margin-top: 2%;
+    font-family: Quicksand;
+    color: yellowgreen;
+    font-size: 20px;
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=10);
+    -khtml-opacity: 0.8;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 0;
+    width: 50%;
+}
+
+th, td{
+    padding: 15px;
+}
+
+
+#iniciativasPMO{
+    width: 70%;
+    margin-left: 15%;
+
+}
+
+#tbl{
+    width: 100%;
+
+
+}
+
+#exportar{
+    width: 5%;
+    font-family: Quicksand;
+    background-color: mintcream;
+    border-radius: 15px;
+    margin: 1px 1px;
+}

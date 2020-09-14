@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+    </f:facet>
+    <title>#{msg['application.title']}</title>
+</h:head>
+
+<h:body>
+    <h:form id="unauthorized" prependId="false">
+        <h:panelGrid id="validacion" columns="2" cellpadding="6" style="border-radius: 15px; opacity: 0.8;-moz-opacity: 0.8;filter: alpha(opacity=10);-khtml-opacity: 0.8;text-align: center;box-sizing: border-box;padding: 0 0; width: 60%;background-color: mintcream;margin-left: 20%">
+            <h1 style="color: black">ACCESO NO AUTORIZADO</h1>
+            <h:graphicImage style="margin-left: -15%" url="img/acceso.png"/>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+
+</html>

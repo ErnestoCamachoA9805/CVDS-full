@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.eci.pdsw.samples.persistence.mybatisimpl.mappers.ConsultaMapper">
+
+    <resultMap type='Consulta' id='ConsultaResult'>
+        <id property='id' column='id'/>        
+        <result property='fechayHora' column='fechayHora'/>
+        <result property='resumen' column='resumen'/>
+    </resultMap>
+    
+    <select parameterType="map" id="consultaSalud" resultMap="ConsultaResult">
+    SELECT 
+	    p.id,
+	    p.tipo_id,
+	    c.resumen
+    from PACIENTES as p
+    join CONSULTAS as c on c.PACIENTES_id = p.id
+    where  p.tipo_id = "TI" and (c.resumen = "Tiene hepatitis" or c.resumen = "Tiene varicela")
+    </select>
+
+    
+</mapper>

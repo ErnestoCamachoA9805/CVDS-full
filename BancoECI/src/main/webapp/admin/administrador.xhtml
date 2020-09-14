@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <link rel="stylesheet" type="text/css" href="../css/administrador.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+    </f:facet>
+    <title>#{msg['application.title']}</title>
+</h:head>
+
+<h:body>
+    <p:commandButton id="boton_salir" value="Salir" actionListener="#{loginBean.logOut}"/>
+    <br/>
+    <h1>Asociar Iniciativas</h1>
+    <br/>
+    <h:form id="busquedaUsuario" prependId="false">
+        <p:dataTable id="tbl" var="usuarios" value="#{adminBean.consultarUsuariosBasico()}" rowKey="#{usuarios.getEmail()}" selection="#{adminBean.usuario}"
+                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                     paginator="true" rows="10" style="margin-bottom: 1%; font-family: Quicksand;width: 90%; margin-left: 5%; border-radius: 15px;">
+            <f:facet name="{Exporters}">
+                <div style="float:right; margin-right: 2%">
+                    <h:commandLink>
+                        <p:graphicImage url="../img/excel.png" width="22"/>
+                        <p:dataExporter type="xls" target="tbl" fileName="Usuarios" encoding="UTF-8"/>
+                    </h:commandLink>
+                    <h:commandLink>
+                        <p:graphicImage url="../img/pdf.png" width="21"/>
+                        <p:dataExporter type="pdf" target="tbl" fileName="Usuarios" encoding="UTF-8"/>
+                    </h:commandLink>
+                </div>
+            </f:facet>
+            <p:column selectionMode="single" style="width:16px;text-align:center"/>
+            <p:column style="background-color: mintcream" filterBy="#{usuarios.getEmail()}" sortBy="#{usuarios.getEmail()}">
+                <f:facet name="header">
+                    <h:outputText value="Email de usuario" />
+                </f:facet>
+                <h:outputText value="#{usuarios.getEmail()}"/>
+            </p:column>
+            <p:column style="background-color: mintcream" filterBy="#{usuarios.getDocumento()}" sortBy="#{usuarios.getDocumento()}">
+                <f:facet name="header">
+                    <h:outputText value="Documento" />
+                </f:facet>
+                <h:outputText value="#{usuarios.getDocumento()}"/>
+            </p:column>
+            <p:column style="background-color: mintcream" filterBy="#{usuarios.getNombre()}" sortBy="#{usuarios.getNombre()}">
+                <f:facet name="header">
+                    <h:outputText value="Nombre" />
+                </f:facet>
+                <h:outputText value="#{usuarios.getNombre()}"/>
+            </p:column>
+            <p:column style="background-color: mintcream" filterBy="#{usuarios.getApellido()}" sortBy="#{usuarios.getApellido()}">
+                <f:facet name="header">
+                    <h:outputText value="Apellido" />
+                </f:facet>
+                <h:outputText value="#{usuarios.getApellido()}"/>
+            </p:column>
+            <p:column style="background-color: mintcream" filterBy="#{usuarios.getRol()}" sortBy="#{usuarios.getRol()}">
+                <f:facet name="header">
+                    <h:outputText value="Rol" />
+                </f:facet>
+                <h:outputText value="#{usuarios.getRol()}"/>
+            </p:column>
+            <p:column style="background-color: mintcream" filterBy="#{usuarios.getArea()}" sortBy="#{usuarios.getArea()}">
+                <f:facet name="header">
+                    <h:outputText value="Area" />
+                </f:facet>
+                <h:outputText value="#{usuarios.getArea()}" />
+            </p:column>
+            <f:facet name="footer">
+                <p:commandButton process="tbl" value="Actualizar rol" actionListener="#{adminBean.redirectActualizarRol()}" style="border-radius: 15px; background-color: mintcream;font-family: Quicksand"/>
+            </f:facet>
+        </p:dataTable>
+        <p:commandButton id="exportar" value="Consultar reporte de iniciativas" actionListener="#{adminBean.redirectReporteIniciativas()}" style="background-color: mintcream; border-radius: 15px; width: 20%; font-family: Quicksand"/>
+        <p:commandButton id="registro" value="Registrar Usuario" actionListener="#{adminBean.redirectRegistroDeUsuario()}" style="background-color: mintcream; border-radius: 15px; font-family: Quicksand"/>
+        <p:commandButton id="asociarIniciativa" value="Asociar Iniciativas" actionListener="#{adminBean.redirectAsociarIniciativas()}" style="background-color: mintcream; border-radius: 15px; font-family: Quicksand"/>
+
+    </h:form>
+
+
+
+
+
+</h:body>
+
+</html>
